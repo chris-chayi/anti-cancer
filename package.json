@@ -9,7 +9,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "mybuild": "ng build --configuration production --output-path docs --base-href /anti-cancer/"
   },
   "private": true,
   "dependencies": {
