@@ -4,37 +4,4 @@
 <!--    </ion-toolbar>-->
 <!--</ion-header>-->
 
-<ion-content [fullscreen]="true">
-    <ng-container *ngFor='let data of datas'>
-        <h1>{{data.text}}</h1>
-        <ol style="--length: {{data.next.length}}" role="list" *ngIf='data.next' >
-            <ng-container *ngFor='let data of data.next;index as i'>
-                <li style="--i: {{i+1}}">
-                    <h3>{{data.text}}</h3>
-                    <ng-container *ngFor='let data of data.next'>
-                        <p>{{data.text}}</p>
-                    </ng-container>
-                </li>
-            </ng-container>
-        </ol>
-    </ng-container>
-
-
-    <ng-container *ngFor='let data of datas'>
-        <ul class='u1' style='display:none'>
-            <li class='l1'>{{data.text}}
-                <ng-container *ngFor='let data of data.next'>
-                    <ul class='u2'>
-                        <li class='l2'>{{data.text}}
-                            <ng-container *ngFor='let data of data.next'>
-                                <ul class='u3'>
-                                    <li class='l3'>{{data.text}}</li>
-                                </ul>
-                            </ng-container>
-                        </li>
-                    </ul>
-                </ng-container>
-            </li>
-        </ul>
-    </ng-container>
-</ion-content>
+<app-article [datas]='datas'></app-article>
