@@ -7,7 +7,7 @@
 <ion-content [fullscreen]="true">
     <ng-container *ngFor='let data of datas'>
         <h1>{{data.text}}</h1>
-        <ol style="--length: 5" role="list">
+        <ol style="--length: {{data.next.length}}" role="list" *ngIf='data.next' >
             <ng-container *ngFor='let data of data.next;index as i'>
                 <li style="--i: {{i+1}}">
                     <h3>{{data.text}}</h3>

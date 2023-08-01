@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {datas, datas2} from "../../assets/article";
 
 @Component({
@@ -9,7 +9,7 @@ import {datas, datas2} from "../../assets/article";
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-    imports: [IonicModule, ExploreContainerComponent, NgForOf]
+    imports: [IonicModule, ExploreContainerComponent, NgForOf, NgIf]
 })
 export class Tab2Page {
 
