@@ -1,17 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      抗癌的原理
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+        <ion-title>
+            抗癌的原理
+        </ion-title>
     </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <ng-container *ngFor='let data of datas'>
+        <h1>{{data.text}}</h1>
+        <ol style="--length: 5" role="list">
+            <ng-container *ngFor='let data of data.next;index as i'>
+                <li style="--i: {{i+1}}">
+                    <h3>{{data.text}}</h3>
+                    <ng-container *ngFor='let data of data.next'>
+                        <p>{{data.text}}</p>
+                    </ng-container>
+                </li>
+            </ng-container>
+        </ol>
+    </ng-container>
